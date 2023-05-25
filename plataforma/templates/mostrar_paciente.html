@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<section class="container">
+    <div class="container text-center">
+        <div>
+            {%if pacientes.image%}
+            <div>
+            <img src="{{ pacientes.image.url}}" alt="imagen.paciente" height="200" width="200" class="rounded float-start">
+            </div>
+            {%else%}
+                <div>
+                <img src="/media/R.png" alt="imagen.paciente" height="200" width="200">
+                </div>
+            {%endif%}
+            
+
+        </div>
+        
+    </div>
+    <div class="conrtainer text-center">
+        <div>
+            <h2>Nombre del paciente </h2>
+            <h3>{{pacientes.nombre}} {{pacientes.apellidoP}} {{pacientes.apellidoM}}</h3>
+        </div>
+    </div>
+    <div class="container py-10">
+        <h2> informacion del paciente</h2>
+    </div>
+</section>
+
+{%endblock%}

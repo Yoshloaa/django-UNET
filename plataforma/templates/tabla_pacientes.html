@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{%block content%}
+
+
+<main class="container py-5">
+  <div class="row">
+    <div class="col col-md-auto"  >
+      <form action="/tabla/" method="post" class="form-control text-center ">
+        <p>filtar datos</p>
+        {% csrf_token %}
+        {{form.as_p}} 
+        <button class="btn btn-secondary"> buscar</button>
+      </form>
+  
+    </div>
+    <div class="col">
+      <h1 class="text-center">TABLA DE PACIENTES</h1>
+    </div>
+    <div class="col col-md-auto text-center"  >
+        <h2>
+          crear nuevo usuario
+        </h2>
+          
+        <p><a href="/pacientes/crear/" class="btn btn-secondary">crear</a>
+        </p>
+    </div>
+
+  </div>
+  
+  <div class="row">
+    
+    <table class="table py-5">
+        <thead>
+          <tr>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">APELLIDO PATERNO</th>
+            <th scope="col">APELLIDO MATERNO</th>
+            <th scope="col">OPCIONES </th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for pacientes in pacien %}
+            <tr>
+                <th scope="col">{{pacientes.nombre}}</th>
+                <th scope="col">{{pacientes.apellidoP}}</th>
+                <th scope="col">{{pacientes.apellidoM}}</th>
+                <th><a href="{% url 'mostrar_pacientes' pacientes.id%}" class="btn btn-secondary">mostrar</a></th>
+                
+            </tr>
+    
+            {%endfor%}
+    
+        </tbody>
+      </table>
+    </div>
+</main>
+
+
+
+
+{% endblock %}

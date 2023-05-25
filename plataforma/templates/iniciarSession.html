@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%block content%}
+<main class="container">
+<div class="row">
+    <div class="col-md-5 offset-md-4 mt-5">
+        
+    <form action="" method="post" class=" card card-body text-center">
+        <h1>iniciar sesion</h1>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            entrar
+        </button>
+    </form>
+    </div>
+    
+</div>
+
+</main>
+
+  
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<h1>registrar usuario</h1>
+ {{error}}
+    <form action="" method="post" class="form-control">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            registar
+        </button>
+    </form>
+  
+
+{% endblock %}

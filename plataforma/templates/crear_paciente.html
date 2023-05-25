@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%block content%}
+<main class="container">
+    <!-- creacciopn de pacientes-->
+    <h2>
+        crear pacientes
+    </h2>
+    {{error}}
+    <form action="" method="post" class="form-control">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            registar
+        </button>
+    </form>
+
+</main>
+
+{%endblock%}
