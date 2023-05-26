@@ -12,6 +12,7 @@ urlpatterns = [
     path('pacientes/',views.pacientes, name='pacientes'),
     path('pacientes/crear/',views.crear_paciente, name='crear_pacientes'),
     path('pacientes/<int:paciente_id>/',views.mostrar_paciente, name='mostrar_pacientes'),
+    path('pacientes/<int:paciente_id>/actualizar/',views.actualizar_paciente,name='actualizar paciente'),
     
     path('agendas/',views.agendas,name='agendas'),
     #path('',views,name=''),

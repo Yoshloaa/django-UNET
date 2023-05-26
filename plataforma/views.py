@@ -105,7 +105,15 @@ def mostrar_paciente(request,paciente_id):
         'pacientes':pacientes,
         'documentos':documents
         })
-
+def actualizar_paciente(request,paciente_id):
+    if request.method=='GET':
+        pacientes=get_object_or_404(pacientes1,pk=paciente_id)
+        form=CreacionP(instance=pacientes)
+        return render(request, "actualizar_paciente.html",{
+            'pacientes':pacientes,
+            'form':form
+        } )
+        return render
         
 
 def agendas(request):
