@@ -6,7 +6,8 @@
         <div>
             {%if pacientes.image%}
             <div>
-            <img src="{{ pacientes.image.url}}" alt="imagen.paciente" height="200" width="200" class="rounded float-start">
+            <img src="{{pacientes.image.url}}" alt="imagen.paciente" height="200" width="200" class="rounded float-start">
+            <p>{{pacientes.image.url}}</p>
             </div>
             {%else%}
                 <div>
